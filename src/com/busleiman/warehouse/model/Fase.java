@@ -1,43 +1,43 @@
-package com.example.library.model;
-
-import java.time.LocalDateTime;
+package com.busleiman.warehouse.model;
 
 public class Fase {
     private int id;
+    private int ordenId;
     private String tipo;
     private String estado;
-    private int ordenId;
     private Integer asignadaA;
-    private LocalDateTime fechaInicio;
-    private LocalDateTime fechaFin;
+    private java.time.LocalDateTime fechaInicio;
+    private java.time.LocalDateTime fechaFin;
+    private int faseAnterior;
+    private int faseSiguiente;
 
-    public Fase(int id, String tipo, String estado, int ordenId, Integer asignadaA,
-                LocalDateTime fechaInicio, LocalDateTime fechaFin) {
+    public Fase(int id, int ordenId, String tipo, String estado, Integer asignadaA,
+                java.time.LocalDateTime fechaInicio, java.time.LocalDateTime fechaFin) {
         this.id = id;
+        this.ordenId = ordenId;
         this.tipo = tipo;
         this.estado = estado;
-        this.ordenId = ordenId;
         this.asignadaA = asignadaA;
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
     }
 
     public int getId() { return id; }
-    public String getTipo() { return tipo; }
-    public String getEstado() { return estado; }
+    public void setId(int id) { this.id = id; }
     public int getOrdenId() { return ordenId; }
-    public Integer getAsignadaA() { return asignadaA; }
-    public LocalDateTime getFechaInicio() { return fechaInicio; }
-    public LocalDateTime getFechaFin() { return fechaFin; }
-
+    public void setOrdenId(int ordenId) { this.ordenId = ordenId; }
+    public String getTipo() { return tipo; }
+    public void setTipo(String tipo) { this.tipo = tipo; }
+    public String getEstado() { return estado; }
     public void setEstado(String estado) { this.estado = estado; }
+    public Integer getAsignadaA() { return asignadaA; }
     public void setAsignadaA(Integer asignadaA) { this.asignadaA = asignadaA; }
-    public void setFechaInicio(LocalDateTime fechaInicio) { this.fechaInicio = fechaInicio; }
-    public void setFechaFin(LocalDateTime fechaFin) { this.fechaFin = fechaFin; }
-
-    @Override
-    public String toString() {
-        return tipo + " - Orden #" + ordenId + " [" + estado + "]";
-    }
+    public java.time.LocalDateTime getFechaInicio() { return fechaInicio; }
+    public void setFechaInicio(java.time.LocalDateTime fechaInicio) { this.fechaInicio = fechaInicio; }
+    public java.time.LocalDateTime getFechaFin() { return fechaFin; }
+    public void setFechaFin(java.time.LocalDateTime fechaFin) { this.fechaFin = fechaFin; }
+    public int getFaseAnterior() { return faseAnterior; }
+    public void setFaseAnterior(int faseAnterior) { this.faseAnterior = faseAnterior; }
+    public int getFaseSiguiente() { return faseSiguiente; }
+    public void setFaseSiguiente(int faseSiguiente) { this.faseSiguiente = faseSiguiente; }
 }
-
